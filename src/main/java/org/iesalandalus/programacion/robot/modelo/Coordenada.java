@@ -12,6 +12,12 @@ public record Coordenada(int x, int y) {
         }
     }
 
+    static Coordenada centro;
+    public void centro(int x, int y){
+        x = 5;
+        y = 5;
+    }
+
     @Override
     public String toString() {
         return "Coordenada -> " + "x = " + x + ", y = " + y;
