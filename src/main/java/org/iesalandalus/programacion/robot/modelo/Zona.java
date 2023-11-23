@@ -1,23 +1,20 @@
 package org.iesalandalus.programacion.robot.modelo;
 
-import static org.iesalandalus.programacion.robot.modelo.Coordenada.centro;
+import javax.naming.OperationNotSupportedException;
 
-public record Zona() {
-    public static final int ANCHO_MINIMO = 0;
-    public static final int ANCHO_MAXIMO = 9;
-    public static final int ALTO_MINIMO = 0;
-    public static final int ALTO_MAXIMO = 9;
-    private static int ancho;
-    private static int alto;
+public record Zona(int ancho, int alto) {
+    public static final int ANCHO_MINIMO = 10;
+    public static final int ANCHO_MAXIMO = 100;
+    public static final int ALTO_MINIMO = 10;
+    public static final int ALTO_MAXIMO = 100;
 
-    public Zona(int ancho, int alto){
+    public Zona {
         validarAncho(ancho);
         validarAlto(alto);
     }
 
     public Zona(){
-        this.ancho = ANCHO_MINIMO;
-        this.alto = ALTO_MINIMO;
+        this(ANCHO_MINIMO, ALTO_MINIMO);
     }
 
     private void validarAncho(int ancho){
@@ -33,29 +30,17 @@ public record Zona() {
     }
 
     public Coordenada getCentro() {
-        return centro;
+        return new Coordenada(ancho/2, alto/2);
     }
 
-    public boolean pertecene(Coordenada coordenada){
-        if (perteneceX() = true && perteneceY() = true){
-            return true;
-        } else {
-            return false;
-        }
+    public boolean pertenece(Coordenada coordenada) {
+        return perteneceX(coordenada.getX()) && perteneceY(coordenada.getY());
     }
     private boolean perteneceX(int x){
-        if(x > 9 || x < 0){
-            return false;
-        } else {
-            return true;
-        }
+        return (x >= 0 || x < ancho);
     }
 
     private boolean perteneceY(int y){
-        if(y > 9 || y < 0){
-            return false;
-        } else {
-            return true;
-        }
+        return (y >= 0 || y < alto);
     }
 }
