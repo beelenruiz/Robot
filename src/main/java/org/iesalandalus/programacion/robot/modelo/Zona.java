@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.robot.modelo;
 
 import javax.naming.OperationNotSupportedException;
+import java.util.Objects;
 
 public record Zona(int ancho, int alto) {
     public static final int ANCHO_MINIMO = 10;
@@ -13,7 +14,7 @@ public record Zona(int ancho, int alto) {
         validarAlto(alto);
     }
 
-    public Zona(){
+    public Zona() {
         this(ANCHO_MINIMO, ALTO_MINIMO);
     }
 
@@ -34,6 +35,7 @@ public record Zona(int ancho, int alto) {
     }
 
     public boolean pertenece(Coordenada coordenada) {
+        Objects.requireNonNull(coordenada, "La coordenada no puede ser nula");
         return perteneceX(coordenada.getX()) && perteneceY(coordenada.getY());
     }
     private boolean perteneceX(int x){
