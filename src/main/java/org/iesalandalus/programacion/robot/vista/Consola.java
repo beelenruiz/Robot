@@ -100,8 +100,12 @@ public class Consola {
 
     public static void motrarRobot(ControladorRobot controladorRobot){
         System.out.println();
-        System.out.println(controladorRobot.getRobot());
-        System.out.println();
+        if (controladorRobot == null){
+            System.out.println("Aún no se ha creado ningún robot que controlar");
+        } else {
+            System.out.println(controladorRobot.getRobot());
+            System.out.println();
+        }
     }
 
     public static void despedirse() {
