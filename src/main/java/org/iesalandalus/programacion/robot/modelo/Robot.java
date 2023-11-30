@@ -28,7 +28,7 @@ public class Robot {
         setOrientacion(orientacion);
         setCoordenada(coordenada);
     }
-    public Robot(Robot robot){
+    public Robot(Robot robot){  //constructor copia
         Objects.requireNonNull(robot, "No puedo copiar un robot nulo.");
         zona = robot.zona;
         coordenada = robot.coordenada;

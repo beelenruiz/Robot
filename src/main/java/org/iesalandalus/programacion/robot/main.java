@@ -11,6 +11,7 @@ public class main {
 
     public static void main(String[] args){
         int opcion;
+        Consola.mostrarMenuPrincipal();
         do {
             opcion = Consola.elegirOpcion();
             ejecutarOpcion(opcion);

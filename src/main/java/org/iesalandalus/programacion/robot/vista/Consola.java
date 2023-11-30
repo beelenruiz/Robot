@@ -12,7 +12,7 @@ public class Consola {
     }
 
     public static void mostrarMenuPrincipal(){
-        System.out.println("Programa para controlar unu robot mediante consola.");
+        System.out.println("Programa para controlar un robot mediante consola.");
         System.out.println("---------------------------------------------------");
         System.out.println();
         System.out.println("1.-Controlar un robot por defecto.");
