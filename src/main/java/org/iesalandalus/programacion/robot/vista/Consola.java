@@ -30,7 +30,7 @@ public class Consola {
         do {
             System.out.print("Elige una opción: ");
             opcion = Entrada.entero();
-        } while (opcion <0 || opcion > 5);
+        } while (opcion <0 || opcion > 6);
         return opcion;
     }
 
@@ -97,6 +97,8 @@ public class Consola {
         System.out.print("Dime el comando a ejecutar: ");
         return Entrada.caracter();
     }
+
+    public
 
     public static void motrarRobot(ControladorRobot controladorRobot){
         System.out.println();

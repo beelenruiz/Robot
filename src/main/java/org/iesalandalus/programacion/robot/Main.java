@@ -6,7 +6,7 @@ import org.iesalandalus.programacion.robot.vista.Consola;
 
 import javax.naming.OperationNotSupportedException;
 
-public class main {
+public class Main {
     private static ControladorRobot controladorRobot;
 
     public static void main(String[] args){
@@ -27,6 +27,7 @@ public class main {
             case 3 -> controlarRobotZonaOrientacion();
             case 4 -> controlarRobotZonaOrientacionCoordenada();
             case 5 -> ejecutarComando();
+            case 6 -> ejecutarSecuenciaComandos();
         }
     }
 
@@ -56,5 +57,9 @@ public class main {
         } else {
             System.out.println("Aún no has creado ningún robot que controlar.");
         }
+    }
+
+    public static void ejecutarSecuenciaComandos {
+
     }
 }

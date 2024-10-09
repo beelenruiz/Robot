@@ -29,7 +29,7 @@ public class Robot {
         setCoordenada(coordenada);
     }
     public Robot(Robot robot){  //constructor copia
-        Objects.requireNonNull(robot, "No puedo copiar un robot nulo.");
+        Objects.requireNonNull(robot, "El robot no puede ser nulo.");
         zona = robot.zona;
         coordenada = robot.coordenada;
         orientacion = robot.orientacion;
@@ -39,24 +39,25 @@ public class Robot {
         return zona;
     }
     private void setZona(Zona zona){
-        this.zona = Objects.requireNonNull(zona, "No puedes poner una zona nula");
+        this.zona = Objects.requireNonNull(zona, "La zona no puede ser nula.");
     }
 
     public Orientacion getOrientacion() {
         return orientacion;
     }
     private void setOrientacion(Orientacion orientacion) {
-        this.orientacion = Objects.requireNonNull(orientacion, "No puedes poner una orientación nula.");
+        this.orientacion = Objects.requireNonNull(orientacion, "La orientación no puede ser nula.");
     }
 
     public Coordenada getCoordenada() {
         return coordenada;
     }
     private void setCoordenada(Coordenada coordenada) {
-        Objects.requireNonNull(coordenada, "No puedes poner una coordenada nula.");
+        Objects.requireNonNull(coordenada, "La coordenada no puede ser nula.");
         if (!zona.pertenece(coordenada)) {
-            throw new IllegalArgumentException("La coordenada no pertenece a la zona");
+            throw new IllegalArgumentException("La coordenada no pertenece a la zona.");
         }
+        if (coordenada)
         this.coordenada = coordenada;
     }
 
